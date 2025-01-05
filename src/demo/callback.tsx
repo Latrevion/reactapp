@@ -8,6 +8,10 @@ const Info: FC<{ call: () => void }> = memo(() => {
     console.log('渲染消息');
     return null;
 });
+// const Info1: FC<{ call: () => void }> = memo(() => {
+//     console.log('渲染消息');
+//     return null;
+// });
 
 export const CallbackDemo: FC = () => {
     const [, setCount] = useState<number>(0);

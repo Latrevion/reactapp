@@ -21,6 +21,31 @@ export const useUpdateEffect = (effect: EffectCallback, deps?: DependencyList) =
         }
     }, [deps]);
 };
+// export const useUpdateEffect1 = (effect: EffectCallback, deps?: DependencyList) => {
+//     const inited = useRef(deps);
+//     useEffect(() => {
+//         if (!isEqual(inited.current, deps)) {
+//             inited.current = deps;
+//             effect();
+//         }
+//     }, [deps]);
+// };
+
+// export const useTheme1 = () => {
+//     const context = useContext(ThemeContext) ?? ({} as Record<string, any>);
+//     return useMemo(
+//         () => (isNil(context.state) ? defaultThemeConfig : context.state),
+//         [context.state],
+//     );
+// };
+
+// export const useTheme2 = () => {
+//     const context = useContext(ThemeContext) ?? ({} as Record<string, any>);
+//     return useMemo(
+//         () => (isNil(context.state) ? defaultThemeConfig : context.state),
+//         [context.state],
+//     );
+// };
 
 export const useTheme = () => {
     const context = useContext(ThemeContext) ?? ({} as Record<string, any>);

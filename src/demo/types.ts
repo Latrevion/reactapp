@@ -4,6 +4,7 @@ export type LocaleType = {
     name: string;
     label: string;
 };
+
 export type LocaleState = {
     locale: LocaleType;
     setLocale: (locale: LocaleType) => void;

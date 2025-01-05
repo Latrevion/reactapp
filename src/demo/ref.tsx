@@ -1,6 +1,17 @@
 import { Button } from 'antd';
 import clsx from 'clsx';
 import { isNaN, isNil } from 'lodash';
+// import {
+//     ChangeEventHandler,
+//     FC,
+//     forwardRef,
+//     useCallback,
+//     useEffect,
+//     useImperativeHandle,
+//     useRef,
+//     useState,
+// } from 'react';
+
 import {
     ChangeEventHandler,
     FC,
@@ -12,12 +23,19 @@ import {
     useState,
 } from 'react';
 
+// import $styles from './style.module.css';
 import $styles from './style.module.css';
 
+// interface RefFunc {
+//     focus: () => void;
+//     memo: () => number;
+// }
 interface RefFunc {
     focus: () => void;
     memo: () => number;
 }
+
+// const HerInput = forwardRef<RefFunc, { value: number; changValue: (v: number) => void }>();
 
 const MyInput = forwardRef<RefFunc, { value: number; changeValue: (v: number) => void }>(
     ({ value, changeValue }, ref) => {

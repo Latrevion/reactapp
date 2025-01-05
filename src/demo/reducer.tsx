@@ -7,6 +7,19 @@ import { defaultThemeConfig, ThemeContext } from './constants';
 import $styles from './style.module.css';
 import { ThemeAction, ThemeState } from './types';
 
+// const ThemeReducer1: Reducer<ThemeState, ThemeAction> = produce((draft, action) => {
+//     switch (action.type) {
+//         case 'change_mode':
+//             draft.mode = action.value;
+//             break;
+//         case 'change_compact':
+//             draft.compact = action.value;
+//             break;
+//         default:
+//             break;
+//     }
+// });
+
 const ThemeReducer: Reducer<ThemeState, ThemeAction> = produce((draft, action) => {
     switch (action.type) {
         case 'change_mode':
