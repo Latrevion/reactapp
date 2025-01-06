@@ -13,6 +13,7 @@ import MemoDemo from './demo/memo';
 import ReducerDemo, { Theme } from './demo/reducer';
 import RefDemo from './demo/ref';
 import StateDemo from './demo/state';
+import { Counter1 } from './demo/zustand_demo';
 
 const px2rem = px2remTransformer();
 const Wrapper: FC = () => {
@@ -51,6 +52,7 @@ const Wrapper: FC = () => {
                         <ContextDemo />
                         <ReducerDemo />
                         <CustomDemo />
+                        <Counter1 />
                     </div>
                 </AntdApp>
             </StyleProvider>
