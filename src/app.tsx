@@ -1,38 +1,24 @@
 import { px2remTransformer, StyleProvider } from '@ant-design/cssinjs';
-import { ConfigProvider, theme, App as AntdApp } from 'antd';
-import { FC, useMemo } from 'react';
+import { ConfigProvider, App as AntdApp } from 'antd';
+import dayjs from 'dayjs';
+import 'dayjs/locale/zh-cn';
+import { FC } from 'react';
 
 import $styles from './app.module.css';
-import { CallbackDemo } from './demo/callback';
-import { localeData } from './demo/constants';
-import ContextDemo, { Locale } from './demo/context';
-import CustomDemo from './demo/custom';
-import EffectDemo from './demo/effect';
-import { useLocale, useTheme } from './demo/hooks';
-import MemoDemo from './demo/memo';
-import ReducerDemo, { Theme } from './demo/reducer';
-import RefDemo from './demo/ref';
-import StateDemo from './demo/state';
-import { Counter1 } from './demo/zustand_demo';
+import Locale from './components/i18n';
+import { useLocaleData } from './components/i18n/hooks';
+import Setting from './components/setting';
+import Theme from './components/theme';
+import { useAntdAlgorithm } from './components/theme/hooks';
 
 const px2rem = px2remTransformer();
 const Wrapper: FC = () => {
-    const locale = useLocale();
-    const antdLocaleData = useMemo(() => {
-        if (!Object.keys(localeData).find((v) => v === locale.name)) {
-            return localeData[0];
-        }
-        return localeData[locale.name];
-    }, [locale.name]);
-    const themeState = useTheme();
-    const algorithm = useMemo(() => {
-        const result = [themeState.compact ? theme.compactAlgorithm : theme.defaultAlgorithm];
-        if (themeState.mode === 'dark') result.push(theme.darkAlgorithm);
-        return result;
-    }, [themeState]);
+    const locale = useLocaleData();
+    const algorithm = useAntdAlgorithm();
+    dayjs.locale('zh-cn');
     return (
         <ConfigProvider
-            locale={antdLocaleData}
+            locale={locale.antd}
             theme={{
                 algorithm,
                 // 启用css变量
@@ -44,15 +30,7 @@ const Wrapper: FC = () => {
             <StyleProvider layer transformers={[px2rem]}>
                 <AntdApp>
                     <div className={$styles.app}>
-                        <StateDemo />
-                        <EffectDemo />
-                        <RefDemo />
-                        <MemoDemo />
-                        <CallbackDemo />
-                        <ContextDemo />
-                        <ReducerDemo />
-                        <CustomDemo />
-                        <Counter1 />
+                        <Setting />
                     </div>
                 </AntdApp>
             </StyleProvider>
@@ -60,7 +38,7 @@ const Wrapper: FC = () => {
     );
 };
 const App: FC = () => (
-    <Locale>
+    <Locale lang="zh_CN">
         <Theme>
             <Wrapper />
         </Theme>
