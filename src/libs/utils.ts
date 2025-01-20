@@ -1,5 +1,11 @@
 import deepmerge from 'deepmerge';
 
+/**
+ * 深度合并对象
+ * @param x 初始值
+ * @param y 新值
+ * @param arrayMode 对于数组采取的策略,`replace`为直接替换,`merge`为合并数组
+ */
 export const deepMerge = <T1, T2>(
     x: Partial<T1>,
     y: Partial<T2>,
