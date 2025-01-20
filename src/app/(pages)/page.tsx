@@ -10,10 +10,10 @@ const HomePage: FC = async () => {
     return (
         <div className="tw-page-container">
             <div className={$styles.block}>
-                <span>欢迎来到3R教室，这是Nextjs课程的开始</span>
+                <span>Welcome,this is Next.js</span>
                 <Button asChild>
-                    <Link href="https://3rcd.com" target="_blank">
-                        <ArrowBigRight /> 查看官网
+                    <Link href="https://nextjs.org/" target="_blank">
+                        <ArrowBigRight /> nextjs.org
                     </Link>
                 </Button>
             </div>
