@@ -26,7 +26,7 @@ export default {
         'value-no-vendor-prefix': true, // 禁止给值添加浏览器引擎前缀
         'selector-no-vendor-prefix': true, // 禁止使用浏览器引擎前缀
         'no-descending-specificity': null, // 禁止低优先级的选择器出现在高优先级的选择器之后
-        'at-rule-no-deprecated': null, // 禁止使用未知指令报错
+        // 'at-rule-no-deprecated': null, // 禁止使用未知指令报错
 
         'property-no-unknown': [
             true,
