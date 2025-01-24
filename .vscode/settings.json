@@ -77,7 +77,7 @@
         "postcss": "css"
     },
     "tailwindCSS.validate": false,
-    "stylelint.enable": true,
+    "stylelint.enable": false,
     "stylelint.packageManager": "pnpm",
     "stylelint.snippet": ["css", "scss", "less", "postcss"],
     "stylelint.validate": ["css", "scss", "less", "postcss"],
