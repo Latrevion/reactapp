@@ -17,6 +17,7 @@
         "@ant-design/cssinjs": "^1.22.1",
         "@ant-design/nextjs-registry": "^1.0.2",
         "@ant-design/v5-patch-for-react-19": "^1.0.3",
+        "@faker-js/faker": "^9.6.0",
         "@radix-ui/react-dropdown-menu": "^2.1.4",
         "@radix-ui/react-slot": "^1.1.1",
         "antd": "^5.22.7",
