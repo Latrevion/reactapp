@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "rimraf -rf .next && next dev --turbopack",
+        "dev": "rimraf -rf .next src/database/db.json && next dev --turbopack",
         "build": "rimraf -rf .next && next build",
         "start": "next start",
         "------------------ lint command": "----",
