@@ -1,0 +1,34 @@
+'use client';
+
+import type { FC } from 'react';
+
+import { isNil } from 'lodash';
+import { UserPen } from 'lucide-react';
+import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
+import { Suspense, useMemo } from 'react';
+
+import { Button as CNButton } from '../shadcn/ui/button';
+
+const Button: FC<{ id: string }> = ({ id }) => {
+    const searchParams = useSearchParams();
+    const getUrlQuery = useMemo(() => {
+        const query = new URLSearchParams(searchParams.toString()).toString();
+        return isNil(query) || query.length < 1 ? '' : `?${query}}`;
+    }, [searchParams]);
+    return (
+        <CNButton asChild className="tw-mr-3">
+            <Link href={`/post-edit/${id}${getUrlQuery}`}>
+                <UserPen></UserPen>edit
+            </Link>
+        </CNButton>
+    );
+};
+
+export const PostEditButton: FC<{ id: string }> = ({ id }) => {
+    return (
+        <Suspense>
+            <Button id={id} />
+        </Suspense>
+    );
+};

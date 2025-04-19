@@ -1,9 +1,7 @@
 import type { FC } from 'react';
 
-import { ArrowBigRight } from 'lucide-react';
 import Link from 'next/link';
 
-import { Button } from '../_components/shadcn/ui/button';
 import $styles from './page.module.css';
 
 const HomePage: FC = async () => {
