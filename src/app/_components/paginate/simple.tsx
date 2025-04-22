@@ -29,17 +29,15 @@ export const Pagination: FC<{ totalPages: number; currentPage: number }> = ({
         },
         [searchParams],
     );
-
     useEffect(() => {
         //If the current page is less than or equal to 1,delete the page query parameter in the URL
         const params = new URLSearchParams(searchParams);
         if (currentPage <= 1) params.delete('page');
         router.replace(pathname + (params.toString() ? `?${params.toString()}` : ''));
     }, [currentPage]);
-
     return totalPages > 1 ? (
         <CNPagination className="tw-justify-start">
-            <PaginationContent>
+            <PaginationContent className="tw-w-full tw-justify-between">
                 <PaginationItem>
                     <PaginationPrevious
                         className={clsx(
@@ -54,6 +52,7 @@ export const Pagination: FC<{ totalPages: number; currentPage: number }> = ({
                         text="上一页"
                     />
                 </PaginationItem>
+
                 <PaginationItem>
                     <PaginationNext
                         className={clsx(
@@ -72,12 +71,11 @@ export const Pagination: FC<{ totalPages: number; currentPage: number }> = ({
         </CNPagination>
     ) : null;
 };
-
 export const SimplePaginate: FC<{ totalPages: number; currentPage: number }> = ({
     totalPages,
     currentPage,
 }) => (
     <Suspense>
-        <Pagination totalPages={totalPages} currentPage={currentPage}></Pagination>
+        <Pagination totalPages={totalPages} currentPage={currentPage} />
     </Suspense>
 );
