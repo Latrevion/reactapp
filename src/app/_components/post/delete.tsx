@@ -62,17 +62,19 @@ export const PostDelete: FC<{ id: string }> = ({ id }) => {
             </AlertDialogTrigger>
             <AlertDialogContent onEscapeKeyDown={(event) => event.preventDefault()}>
                 <AlertDialogHeader>
-                    <AlertDialogTitle>是否确认删除该文章？</AlertDialogTitle>
+                    <AlertDialogTitle>
+                        Are you sure you want to delete this article?
+                    </AlertDialogTitle>
                     <AlertDialogDescription>
-                        当前不支持软删除，删除文章后将无法恢复
+                        Permanent deletion only. This action cannot be undone
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
                     <AlertDialogCancel disabled={pending} onClick={close}>
-                        取消
+                        Cancel
                     </AlertDialogCancel>
                     <AlertDialogAction onClick={deleteItem} disabled={pending}>
-                        {pending ? '删除中' : '确认'}
+                        {pending ? 'Deleting' : 'Confirm'}
                     </AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>
