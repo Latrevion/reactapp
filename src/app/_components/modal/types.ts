@@ -3,7 +3,7 @@ import type { PropsWithChildren } from 'react';
 /**
  * The parameter type of the page pop-up box
  */
-export type ModalProps = PropsWithChildren<{
+export type PageModalProps = PropsWithChildren<{
     /**
      * Pop-up box title
      */
