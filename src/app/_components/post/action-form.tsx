@@ -19,7 +19,6 @@ import {
 import { Input } from '../shadcn/ui/input';
 import { Textarea } from '../shadcn/ui/textarea';
 import { usePostActionForm, usePostFormSubmitHandler } from './hooks';
-
 export const PostActionForm = forwardRef<PostCreateFormRef, PostActionFormProps>((props, ref) => {
     const form = usePostActionForm(
         props.type === 'create' ? { type: props.type } : { type: props.type, item: props.item },
@@ -34,8 +33,10 @@ export const PostActionForm = forwardRef<PostCreateFormRef, PostActionFormProps>
             props.setPedding(form.formState.isSubmitting);
     }, [form.formState.isSubmitting]);
 
-    useImperativeHandle(ref, () =>
-        props.type === 'create' ? { create: form.handleSubmit(submitHandler) } : {}[props.type],
+    useImperativeHandle(
+        ref,
+        () => (props.type === 'create' ? { create: form.handleSubmit(submitHandler) } : {}),
+        [props.type],
     );
 
     return (
