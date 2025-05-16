@@ -16,3 +16,5 @@ const PostCreatePage: FC = async () => {
         </div>
     );
 };
+
+export default PostCreatePage;
