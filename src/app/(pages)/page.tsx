@@ -14,7 +14,7 @@ import { PostListPaginate } from '../_components/post/paginate';
 import { queryPostPaginate } from '../actions/post';
 import $styles from './page.module.css';
 
-const HomePage: FC<{ PsearchParams: Promise<IPaginateQueryProps> }> = async ({ searchParams }) => {
+const HomePage: FC<{ searchParams: Promise<IPaginateQueryProps> }> = async ({ searchParams }) => {
     const { page: currentPage, limit = 8 } = await searchParams;
     //if no current page is passed in or the current page is less than 1,set to page 1;
     const page = isNil(currentPage) || Number(currentPage) < 1 ? 1 : Number(currentPage);
