@@ -36,8 +36,8 @@ export const PageModal: FC<PageModalProps> = ({ title, match, className, childre
         <Dialog open defaultOpen onOpenChange={close}>
             <DialogContent
                 className={clsx('sm:tw-max-w-[80%]', className)}
-                onEscapeKeyDown={(event) => event.preventDefault}
-                onInteractOutside={(event) => event.preventDefault}
+                onEscapeKeyDown={(event) => event.preventDefault()}
+                onInteractOutside={(event) => event.preventDefault()}
             >
                 <DialogHeader>
                     <DialogTitle>{title}</DialogTitle>
