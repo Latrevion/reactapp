@@ -14,7 +14,7 @@ const Button: FC<{ id: string }> = ({ id }) => {
     const searchParams = useSearchParams();
     const getUrlQuery = useMemo(() => {
         const query = new URLSearchParams(searchParams.toString()).toString();
-        return isNil(query) || query.length < 1 ? '' : `?${query}}`;
+        return isNil(query) || query.length < 1 ? '' : `?${query}`;
     }, [searchParams]);
     return (
         <CNButton asChild className="tw-mr-3">
