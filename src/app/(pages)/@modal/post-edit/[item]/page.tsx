@@ -6,7 +6,7 @@ import { notFound } from 'next/navigation';
 
 import { PostEditForm } from './form';
 
-export const PostEditPage: FC<{ params: Promise<{ item: string }> }> = async ({ params }) => {
+const PostEditPage: FC<{ params: Promise<{ item: string }> }> = async ({ params }) => {
     const { item } = await params;
     if (isNil(item)) return notFound();
 
@@ -20,3 +20,5 @@ export const PostEditPage: FC<{ params: Promise<{ item: string }> }> = async ({ 
         </PageModal>
     );
 };
+
+export default PostEditPage;
