@@ -21,8 +21,8 @@ export const usePostActionForm = (params: { type: 'create' } | { type: 'update';
     const defaultValues = useMemo(() => {
         if (params.type === 'create') {
             return {
-                title: '文章标题',
-                body: '文章内容',
+                title: 'Article Title',
+                body: 'Article Content',
                 summary: '',
             } as DeepNonNullable<PostCreateData>;
         }

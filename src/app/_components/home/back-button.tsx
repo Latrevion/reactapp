@@ -37,7 +37,7 @@ export const BackButton: FC = () => {
             onClick={goBack}
         >
             <Undo2 />
-            返回
+            Go Back
         </Button>
     );
 };

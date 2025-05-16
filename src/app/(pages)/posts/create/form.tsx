@@ -26,7 +26,7 @@ export const PostCreateForm: FC = () => {
             <div className={$styles.actions}>
                 <BackButton></BackButton>
                 <Button onClick={createPost} disabled={pending}>
-                    {pending ? 'Saveing...' : 'Save'}
+                    {pending ? 'Saving...' : 'Save'}
                     <Save></Save>
                 </Button>
             </div>

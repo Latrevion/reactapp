@@ -20,7 +20,7 @@ export const Details: FC<PropsWithChildren<{ defaultOpen?: boolean; summary: str
     const openDetails = useCallback((isInit = false) => {
         if (detailsRef.current && contentRef.current) {
             detailsRef.current.setAttribute('open', '');
-            contentRef.current.style.maxHeight = `${contentRef.current.scrollHeight}`;
+            contentRef.current.style.maxHeight = `${contentRef.current.scrollHeight}px`;
             if (isInit) setOpen(true);
             else {
                 contentRef.current.addEventListener(

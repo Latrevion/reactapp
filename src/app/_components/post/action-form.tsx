@@ -66,15 +66,17 @@ export const PostActionForm = forwardRef<PostCreateFormRef, PostActionFormProps>
                         name="summary"
                         render={({ field }) => (
                             <FormItem className="tw-mt-2 tw-border-b tw-border-dashed tw-pb-1">
-                                <FormLabel>摘要简述</FormLabel>
+                                <FormLabel>Summary</FormLabel>
                                 <FormControl>
                                     <Textarea
                                         {...field}
-                                        placeholder="请输入文章摘要"
+                                        placeholder="please enter a summary"
                                         disabled={form.formState.isSubmitting}
                                     />
                                 </FormControl>
-                                <FormDescription>摘要会显示在文章列表页</FormDescription>
+                                <FormDescription>
+                                    The summary appears on the article list page
+                                </FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
@@ -85,10 +87,10 @@ export const PostActionForm = forwardRef<PostCreateFormRef, PostActionFormProps>
                     name="body"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>文章内容</FormLabel>
+                            <FormLabel>Article Content</FormLabel>
                             <FormControl>
                                 <Textarea
-                                    placeholder="请输入内容"
+                                    placeholder="please enter a content"
                                     {...field}
                                     className="tw-min-h-80"
                                 />
@@ -99,7 +101,7 @@ export const PostActionForm = forwardRef<PostCreateFormRef, PostActionFormProps>
                 />
                 {props.type === 'update' && (
                     <Button type="submit" disabled={form.formState.isSubmitting}>
-                        {form.formState.isSubmitting ? '更新中...' : '保存'}
+                        {form.formState.isSubmitting ? 'Updating...' : 'Save'}
                     </Button>
                 )}
             </form>
